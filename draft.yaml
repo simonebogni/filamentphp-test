@@ -10,9 +10,15 @@ models:
     total: decimal
     relationships:
       belongsTo: Customer
+  Country:
+    name: string
+    code: string
 
 controllers:
   Customer:
     resource
   Order:
     resource
+  Country:
+    resource
+

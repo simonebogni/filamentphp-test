@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::resource('customer', App\Http\Controllers\CustomerController::class);
 
 Route::resource('order', App\Http\Controllers\OrderController::class);
+
+Route::resource('country', App\Http\Controllers\CountryController::class);

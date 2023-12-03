@@ -55,10 +55,16 @@
 {{--                    color: '#e9ebee',--}}
 {{--                },--}}
             }
-            const qrCode = new QRCodeStyling(options);
-            qrCode.append($refs.canvas);
+            {{ $getStatePath() }} = new QRCodeStyling(options);
+            {{ $getStatePath() }}.append($refs.canvas);
         "
     >
-        <div id="qr" x-ref="canvas"></div>
+        <div id="qr" x-ref="canvas" @click="{{ $getStatePath() }}.download({ name: 'qr_code', extension: 'png' });"></div>
     </div>
+    <script type="text/javascript">
+        if(typeof data === typeof undefined) {
+            data = {};
+        }
+        {{ $getStatePath() }} = null;
+    </script>
 </x-dynamic-component>
