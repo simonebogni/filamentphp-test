@@ -1,0 +1,18 @@
+models:
+  Customer:
+    name: string
+    surname: string
+    email: email
+    relationships:
+      hasMany: Order
+  Order:
+    number: unsignedInteger
+    total: decimal
+    relationships:
+      belongsTo: Customer
+
+controllers:
+  Customer:
+    resource
+  Order:
+    resource
